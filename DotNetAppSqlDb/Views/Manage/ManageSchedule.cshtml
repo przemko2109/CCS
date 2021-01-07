@@ -1,0 +1,38 @@
+﻿@model BusTickets.ViewModels.ScheduleViewModel
+
+<p>
+    @Html.ActionLink("Create New", "AddSchedule")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Day
+        </th>
+        <th>
+            Hour
+        </th>
+        <th>
+            City
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Schedule)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditSchedule", new { id = item.scheduleId }) |
+            @Html.ActionLink("Delete", "DeleteSchedule", new { id = item.scheduleId })
+        </td>
+    </tr>
+    }
+</table>

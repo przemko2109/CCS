@@ -1,0 +1,22 @@
+﻿<html>
+    <body>
+        <div class="text-center">
+            <h1 class="display-4">Bus Service</h1>
+
+            @Html.ActionLink("Show map", "ShowMap")
+            <h2>                                            </h2>
+            @Html.ActionLink("Show schedule", "ShowSchedule")
+            <h2>                                            </h2>
+            @Html.ActionLink("Show tickets", "ShowTickets")
+            <h2>                                            </h2>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <b>You must be logged in to buy tickets.</b>
+            }
+            else
+            {
+                @Html.ActionLink("Buy a ticket", "BuyTheTicket")
+            }
+        </div>
+    </body>
+</html>

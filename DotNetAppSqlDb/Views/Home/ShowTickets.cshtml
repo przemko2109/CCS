@@ -1,0 +1,36 @@
+﻿@model BusTickets.ViewModels.TicketViewModel
+@{
+    ViewBag.Title = "Tickets";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            Age
+        </th>
+        <th>
+            Route Id
+        </th>
+        <th>
+            Schedule Id
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Tickets)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.routeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.scheduleId)
+            </td>
+        </tr>
+    }
+
+</table>

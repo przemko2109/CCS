@@ -1,0 +1,38 @@
+﻿@model BusTickets.ViewModels.MapViewModel
+
+<p>
+    @Html.ActionLink("Create New", "AddMap")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Exit city
+        </th>
+        <th>
+            Destination city
+        </th>
+        <th>
+            Distance
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Map)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.exitCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.destinationCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditMap", new { id = item.routeId }) |
+            @Html.ActionLink("Delete", "DeleteMap", new { id = item.routeId })
+        </td>
+    </tr>
+    }
+</table>

@@ -1,0 +1,117 @@
+﻿@model BusTickets.ViewModels.ScheduleViewModel
+@{
+    ViewBag.Title = "The schedule";
+}
+
+<div class="text-center">
+    <h1>ViewBag.Title = "The schedule"</h1>
+</div>
+
+<h1>                 </h1>
+<h1>                 </h1>
+<h2>Working days</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            City
+        </th>
+        <th>
+            Hour
+        </th>
+        <th>
+            Day
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Schedule)
+    {
+        if (item.Day == "working")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Day)
+                </td>
+            </tr>
+}
+    }
+
+</table>
+
+<h1>                 </h1>
+<h1>                 </h1>
+<h2>Saturdays</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            City
+        </th>
+        <th>
+            Hour
+        </th>
+        <th>
+            Day
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Schedule)
+    {
+        if (item.Day == "saturday")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Day)
+                </td>
+            </tr>
+}
+    }
+</table>
+
+<h1>                 </h1>
+<h1>                 </h1>
+<h2>Sundays</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            City
+        </th>
+        <th>
+            Hour
+        </th>
+        <th>
+            Day
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Schedule)
+    {
+        if (item.Day == "sunday")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Day)
+                </td>
+            </tr>
+}
+    }
+</table>
