@@ -1,10 +1,10 @@
-﻿@model BusTickets.ViewModels.ScheduleViewModel
+﻿@model IEnumerable<BusTickets.Models.Schedule>
 @{
     ViewBag.Title = "The schedule";
 }
 
 <div class="text-center">
-    <h1>ViewBag.Title = "The schedule"</h1>
+    <h1>Schedule</h1>
 </div>
 
 <h1>                 </h1>
@@ -24,7 +24,7 @@
         </th>
     </tr>
 
-    @foreach (var item in Model.Schedule)
+    @foreach (var item in Model)
     {
         if (item.Day == "working")
         {
@@ -39,7 +39,7 @@
                     @Html.DisplayFor(modelItem => item.Day)
                 </td>
             </tr>
-}
+        }
     }
 
 </table>
@@ -61,7 +61,7 @@
         </th>
     </tr>
 
-    @foreach (var item in Model.Schedule)
+    @foreach (var item in Model)
     {
         if (item.Day == "saturday")
         {
@@ -76,7 +76,7 @@
                     @Html.DisplayFor(modelItem => item.Day)
                 </td>
             </tr>
-}
+        }
     }
 </table>
 
@@ -97,7 +97,7 @@
         </th>
     </tr>
 
-    @foreach (var item in Model.Schedule)
+    @foreach (var item in Model)
     {
         if (item.Day == "sunday")
         {
@@ -112,6 +112,6 @@
                     @Html.DisplayFor(modelItem => item.Day)
                 </td>
             </tr>
-}
+        }
     }
 </table>

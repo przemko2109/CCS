@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
@@ -15,13 +16,18 @@ namespace BusTickets.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public MyDatabaseContext() : base("name=MyDbConnection")
+        public MyDatabaseContext() : base("name=DatabaseConnection")
         {
         }
-
-        public static MyDatabaseContext Create()
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            return new MyDatabaseContext();
+            //Database.SetInitializer<demoEntities>(null);
+            modelBuilder.Entity<User>().ToTable("Users");
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            base.OnModelCreating(modelBuilder);
+
+
         }
         public System.Data.Entity.DbSet<BusTickets.Models.User> Users { get; set; }
         public System.Data.Entity.DbSet<BusTickets.Models.Ticket> Tickets { get; set; }

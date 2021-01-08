@@ -5,12 +5,6 @@
       "type": "appInsights.azure",
       "connectionId": "APPINSIGHTS_CONNECTIONSTRING",
       "secretStore": "AzureAppSettings"
-    },
-    "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/busticketsdbserver/databases/BusTickets_db",
-      "type": "mssql.azure",
-      "connectionId": "MyDbConnection",
-      "secretStore": "AzureAppSettings"
     }
   }
 }

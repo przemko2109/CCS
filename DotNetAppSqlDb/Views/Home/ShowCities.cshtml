@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BusTickets.Models.Map>
+﻿@model IEnumerable<BusTickets.Models.City>
 @{
     ViewBag.Title = "Map";
 }
@@ -7,13 +7,13 @@
 <table class="table">
     <tr>
         <th>
-            Age
+            City name
         </th>
         <th>
-            Route Id
+            City code
         </th>
         <th>
-            Schedule Id
+            City ID
         </th>
     </tr>
 
@@ -22,13 +22,13 @@
 
         <tr>
             <td>
-                <p>@item.exitCity</p>
+                <p>@item.cityName</p>
             </td>
             <td>
-                <p>@item.destinationCity</p>
+                <p>@item.cityCode</p>
             </td>
             <td>
-                <p>@item.Distance</p>
+                <p>@item.cityId</p>
             </td>
         </tr>
     }

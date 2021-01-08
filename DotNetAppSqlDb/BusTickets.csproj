@@ -212,7 +212,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="Properties\PublishProfiles\BusTickets - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\BusTickets2021 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -245,8 +245,6 @@
     <Content Include="Views\TodosDone\Details.cshtml" />
     <Content Include="Views\TodosDone\Edit.cshtml" />
     <Content Include="Views\TodosDone\Index.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\LoginLogout.cshtml" />
     <Content Include="Views\Manage\Administrator.cshtml" />
@@ -263,6 +261,9 @@
     <Content Include="Views\Home\ShowMap.cshtml" />
     <Content Include="Views\Home\ShowSchedule.cshtml" />
     <Content Include="Views\Home\ShowTickets.cshtml" />
+    <Content Include="Views\Home\ShowCities.cshtml" />
+    <Content Include="Views\Account\LoggingIn.cshtml" />
+    <Content Include="Views\Account\Registeration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,14 +8,7 @@ namespace BusTickets.Models
 {
     public class Schedule
     {
-        public Schedule(int schedule_id, TimeSpan hour, string city, string day)
-        {
-            scheduleId = schedule_id;
-            City = city;
-            Hour = hour;
-            Day = day;
-        }
-
+        [Key]
         public int scheduleId { get; set; }
 
         public TimeSpan Hour { get; set; }

@@ -9,11 +9,9 @@ namespace BusTickets.Models
 {
     public class User
     {
-        [Key, Column(Order = 1)]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         [Required]
         [Display(Name = "ID")]
-        public int userId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
@@ -35,10 +33,9 @@ namespace BusTickets.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        [NotMapped]
         [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm the password")]
-        [Compare("Password", ErrorMessage = "Confirmation failure.")]
+        [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
         public string FullName()

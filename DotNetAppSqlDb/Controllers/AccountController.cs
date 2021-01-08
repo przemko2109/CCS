@@ -9,7 +9,6 @@ using System.Web.Mvc;
 
 namespace BusTickets.Controllers
 {
-    [Authorize]
     public class AccountController : Controller
     {
         private MyDatabaseContext _db = new MyDatabaseContext();
@@ -17,7 +16,7 @@ namespace BusTickets.Controllers
 
         //GET: Register
 
-        public ActionResult Register()
+        public ActionResult Registeration()
         {
             return View();
         }
@@ -25,7 +24,7 @@ namespace BusTickets.Controllers
         //POST: Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(User _user)
+        public ActionResult Registeration(User _user)
         {
             if (ModelState.IsValid)
             {
@@ -36,7 +35,7 @@ namespace BusTickets.Controllers
                     _db.Configuration.ValidateOnSaveEnabled = false;
                     _db.Users.Add(_user);
                     _db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return View("LoggingIn");
                 }
                 else
                 {
@@ -51,7 +50,7 @@ namespace BusTickets.Controllers
 
         }
 
-        public ActionResult Login()
+        public ActionResult LoggingIn()
         {
             return View();
         }
@@ -60,7 +59,7 @@ namespace BusTickets.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(string email, string password)
+        public ActionResult LoggingIn(string email, string password)
         {
             if (ModelState.IsValid)
             {
@@ -70,13 +69,13 @@ namespace BusTickets.Controllers
                 {
                     Session["FullName"] = data.FirstOrDefault().Name + " " + data.FirstOrDefault().Surname;
                     Session["Email"] = data.FirstOrDefault().Email;
-                    Session["Id"] = data.FirstOrDefault().userId;
-                    return RedirectToAction("Index");
+                    Session["Id"] = data.FirstOrDefault().Id;
+                    return View("Index");
                 }
                 else
                 {
                     ViewBag.error = "Login failed";
-                    return RedirectToAction("Login");
+                    return View();
                 }
             }
             return View();

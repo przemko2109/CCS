@@ -9,7 +9,7 @@
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "MyDbConnection"
+      "connectionId": "DatabaseConnection"
     }
   }
 }
