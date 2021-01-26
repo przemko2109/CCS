@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BusTickets.Models.Map>
+@{ ViewBag.Title = "Map"; }
+
+<h2>Map</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddMap")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            MapId
+        </th>
+        <th>
+            ExitCityId
+        </th>
+        <th>
+            DestinationCityId
+        </th>
+        <th>
+            Distance
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        <p>@item.Id</p>
+    </td>
+    <td>
+        <p>@item.ExitCityId</p>
+    </td>
+    <td>
+        <p>@item.DestinationCityId</p>
+    </td>
+    <td>
+        <p>@item.Distance</p>
+    </td>
+    <td>
+        @Html.ActionLink("Delete", "DeleteMap", new { id = item.Id })
+    </td>
+</tr>}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to the list", "AdminIndex")
+</div>

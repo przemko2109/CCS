@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BusTickets.Models.Age>
+@{ ViewBag.Title = "Age"; }
+
+<h2>Age</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddAge")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            AgeName
+        </th>
+        <th>
+            AgeId
+        </th>
+        <th>
+            Percentage
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <td>
+        <p>@item.AgeName</p>
+    </td>
+    <td>
+        <p>@item.AgeId</p>
+    </td>
+    <td>
+        <p>@item.Percentage</p>
+    </td>
+    <td>
+        @Html.ActionLink("Delete", "DeleteAge", new { id = item.AgeId })
+    </td>
+</tr>}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to the list", "AdminIndex")
+</div>

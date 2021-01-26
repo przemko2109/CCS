@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BusTickets.Models.City>
+@{
+    ViewBag.Title = "City";
+}
+
+<div class="text-center">
+    <h1>Cities</h1>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            City name
+        </th>
+        <th>
+            City ID
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                <p>@item.CityName</p>
+            </td>
+            <td>
+                <p>@item.CityId</p>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to the list", "Index")
+</div>

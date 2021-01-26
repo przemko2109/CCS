@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BusTickets.Models.Ticket>
+@{ ViewBag.Title = "Tickets"; }
+
+<div class="text-center">
+    <h1>Tickets</h1>
+</div>
+
+<h1>                 </h1>
+
+<table class="table">
+    <tr>
+        <th>
+            AgeId
+        </th>
+        <th>
+            UserId
+        </th>
+        <th>
+            ScheduleId
+        </th>
+        <th>
+            Price
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.AgeId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ScheduleId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+</tr>}
+
+</table>
+<div>
+    @Html.ActionLink("Back to the list", "AdminIndex")
+</div>
+

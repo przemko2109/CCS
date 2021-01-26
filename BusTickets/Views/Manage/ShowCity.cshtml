@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BusTickets.Models.City>
+@{ 
+    ViewBag.Title = "City"; 
+}
+
+<h2>City</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddCity")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            CityName
+        </th>
+        <th>
+            CityId
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <td>
+        <p>@item.CityName</p>
+    </td>
+    <td>
+        <p>@item.CityId</p>
+    </td>
+    <td>
+        @Html.ActionLink("Delete", "DeleteCity", new { id = item.CityId })
+    </td>
+</tr>}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to the list", "AdminIndex")
+</div>

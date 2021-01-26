@@ -1,0 +1,50 @@
+﻿@model BusTickets.Models.Map
+@{
+    ViewBag.Title = "Add the map";
+}
+
+<h2>Add the route</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => Model.ExitCityId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.ExitCityId, new SelectList(Model.ExitCities, "Value", "Text"))
+                @Html.ValidationMessageFor(model => Model.ExitCityId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => Model.DestinationCityId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.DestinationCityId, new SelectList(Model.DestinationCities, "Value", "Text"))
+                @Html.ValidationMessageFor(model => Model.DestinationCityId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => Model.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => Model.Distance, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => Model.Distance, "", new { @class = "text-danger" })
+            </div>
+        </div>    
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to the list", "AdminIndex")
+</div>

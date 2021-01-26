@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Ten plik jest wykorzystywany przez proces publikowania/pakowania projektu internetowego. Możesz dostosować zachowanie tego procesu
+ poprzez edycję tego pliku MSBuild. Aby dowiedzieć się więcej o tym działaniu, odwiedź stronę https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8+3a8W8p9USgsGDB42kMMQAAAAACAAAAAAAQZgAAAAEAACAAAAAQ3v+4Xia8JnsOBWvSh6seFnkfI/c1cBOiSa6zFZZ0hAAAAAAOgAAAAAIAACAAAAA5nknh8hRMSNNkpZyvPjNpK+osJPxpPsM0qodYFSL+MIAAAABu3X6PIPKRhSPce/hWfGyx9vv21uO/PSbeh6oc6oZ3kwjAjRi4Ob0DEUMZ2EkA4f/xw5kQEYAbZkbb8O8/hIzX3/xBvm9J8/cHyzZ3RjIKKiCDZUMjMmchcjnwl6wDOxmiAf7GTtTST8hTEj8CdC1sY2FYpn3FTevs001Yo2xEQ0AAAAAL1P6CE8FBwovGJByoSqtWUu2tjYGuVEZq+ZPB6sHxIMLvPOrDS9QX4hUnMaipudhWahUcuWFCcN4ERxbBXjWO</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <AzureDBConnectionStrings Include="Data Source=tcp:busservicedbserver1.database.windows.net,1433;Initial Catalog=BusService_db;User Id=my_admin@busservicedbserver1;Password=Password.2109" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:busticketsdbserver.database.windows.net,1433;Initial Catalog=BusService_db;User Id=administrator2109@busticketsdbserver;Password=Password.2109" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:busticketsdbserver.database.windows.net,1433;Initial Catalog=DotNetAppSqlDb_db;User Id=administrator2109@busticketsdbserver;Password=Tyranosaurus.2109" />
+  </ItemGroup>
+</Project>

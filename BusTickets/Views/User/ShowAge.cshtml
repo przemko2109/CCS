@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BusTickets.Models.Age>
+@{ ViewBag.Title = "Age"; }
+
+<h2>Age</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            AgeName
+        </th>
+        <th>
+            AgeId
+        </th>
+        <th>
+            Percentage
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <td>
+        <p>@item.AgeName</p>
+    </td>
+    <td>
+        <p>@item.AgeId</p>
+    </td>
+    <td>
+        <p>@item.Percentage</p>
+    </td>
+</tr>}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to the list", "Index")
+</div>
